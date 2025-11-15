@@ -6,17 +6,17 @@ function Navbar() {
   return (
     <nav className="navbar-container">
       {/* 1. โลโก้ */}
-      <a href="/" className="navbar-logo">
+      <a href="#/home" className="navbar-logo">
         HOME
       </a>
 
       {/* 2. ลิงก์เมนูหลัก */}
       <div className="navbar-links">
-        <a href="/gallery">GALLERY</a>
-        <a href="/vision">VISION</a>
-        <a href="/quests">QUESTS</a>
-        <a href="/artists">ARTISTS</a>
-        <a href="/claim">CLAIM</a>
+        <a href="#/gallery">GALLERY</a> {/* อัปเดต href เพื่อนำทางไปหน้า Gallery */}
+        <a href="#/vision">VISION</a>
+        <a href="#/quests">QUESTS</a>
+        <a href="#/artists">ARTISTS</a>
+        <a href="#/claim">CLAIM</a>
       </div>
 
       {/* 3. ส่วนด้านขวา (ไอคอน, ปุ่ม Connect) */}
