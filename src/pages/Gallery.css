@@ -44,7 +44,8 @@
     - minmax(280px, 1fr): แต่ละคอลัมน์มีความกว้างอย่างน้อย 280px 
                          และขยายได้สูงสุดเท่าๆ กัน (1fr)
   */
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
   gap: 1.5rem; /* ระยะห่างระหว่างรูป */
 }
 
