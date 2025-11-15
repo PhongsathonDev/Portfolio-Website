@@ -1,0 +1,117 @@
+/* src/pages/Gallery.css */
+
+/* --- Container หลักของหน้า --- */
+.gallery-page-container {
+  padding-top: 80px; /* กันชน Navbar ที่ fixed อยู่ */
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px; /* จำกัดความกว้างสูงสุดของเนื้อหา */
+  margin: 0 auto; /* จัดกลาง */
+  
+  /* ใช้ padding 2 ข้าง แทนการใช้ padding 2rem ที่ #root */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 4rem;
+  
+  /* ช่วยให้ padding ไม่ล้นความกว้าง 100% */
+  box-sizing: border-box; 
+}
+
+/* --- ส่วนหัวของหน้า --- */
+.gallery-header {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem 1.5rem; /* ลด padding ด้านบนลงเล็กน้อย */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery-header h1 {
+  font-size: 2.5rem; /* ปรับขนาด H1 ให้สมดุล */
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.gallery-header p {
+  font-size: 1.1rem; /* ปรับขนาด p */
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* --- ส่วนสำคัญ: Grid แสดงรูปภาพ --- */
+.gallery-grid {
+  display: grid;
+  /* - auto-fit: ให้เบราว์เซอร์คำนวณว่าจะใส่กี่คอลัมน์
+    - minmax(280px, 1fr): แต่ละคอลัมน์มีความกว้างอย่างน้อย 280px 
+                         และขยายได้สูงสุดเท่าๆ กัน (1fr)
+  */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; /* ระยะห่างระหว่างรูป */
+}
+
+/* --- การ์ดแต่ละใบ --- */
+.gallery-card {
+  background-color: #1e293b; /* สีพื้นหลังการ์ด (อ้างอิงจากสี placeholder เดิม) */
+  border-radius: 8px;
+  overflow: hidden; /* ทำให้ขอบมนมีผลกับรูปภาพ */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none; /* สำหรับกรณีที่อยากให้การ์ดเป็น Link */
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px); /* เอฟเฟกต์ลอยขึ้นเมื่อ hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- รูปภาพในการ์ด --- */
+.gallery-card-image {
+  width: 100%;
+  height: 220px; /* กำหนดความสูงคงที่ (ปรับค่านี้ได้ตามชอบ) */
+  object-fit: cover; /* ทำให้รูปภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+  display: block;
+  border-bottom: 1px solid #334155; /* เส้นขอบบางๆ คั่น */
+}
+
+/* --- คำบรรยายใต้ภาพ --- */
+.gallery-card-caption {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.gallery-card-caption h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #e2e8f0; /* สีข้อความสว่าง */
+}
+
+.gallery-card-caption p {
+  font-size: 0.9rem;
+  color: #94a3b8; /* สีข้อความรอง (เทา) */
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- ปุ่มกลับหน้าหลัก --- */
+.back-to-home {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.back-to-home-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #2563eb;
+  background: transparent;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-home-btn:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
