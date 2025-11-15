@@ -1,5 +1,4 @@
 // Navbar.js
-import React from 'react';
 import './Navbar.css';
 import { BsImage, BsWallet2 } from 'react-icons/bs'; // Import ไอคอน
 
@@ -8,7 +7,7 @@ function Navbar() {
     <nav className="navbar-container">
       {/* 1. โลโก้ */}
       <a href="/" className="navbar-logo">
-        KAZE
+        HOME
       </a>
 
       {/* 2. ลิงก์เมนูหลัก */}
